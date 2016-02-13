@@ -15,36 +15,30 @@ public class Vector {
 
   private int mayor;
   private int menor;
+  private int vector[];
+  int n;
 
   // Constructor
   public void vector() {
     mayor = 0;
     menor = 700;
+    n = 0;
   }
 
   java.util.Scanner input = new java.util.Scanner(System.in);
 
   public int[] vectorCalc() {
 
-    int vector[];
 
     System.out.println("Digite el tamaño del vector: ");
-    vector = new int[input.nextInt()];
+    n = input.nextInt();
+    vector = new int[n];
 
     for (int i = 0; i < vector.length; i++) {
       System.out.println("Digite el valor del índice " + i);
       vector[i] = input.nextInt();
     }
     return vector;
-  }
-
-  //Punto 1
-  public void inverse(int[] vector) {
-
-    System.out.println("El vector en sentido inverso es: ");
-    for (int i = (vector.length - 1); i >= 0; i--) {
-      System.out.print(vector[i] + "  ");
-    }
   }
 
   public int sum(int[] vector) {
@@ -64,6 +58,44 @@ public class Vector {
     prom = (sum / vector.length);
 
     return prom;
+  }
+
+  public void sumEven(int [] vector) {
+
+    int sumEven = 0;
+    String text = "";
+    for (int i = 0; i < vector.length; i++) {
+      if ((vector[i] % 2) == 0) {
+        sumEven = sumEven + vector[i];
+        text += "+" + vector[i];
+      }
+    }
+    System.out.println("La suma de los números pares es: " + sumEven);
+  }
+
+  public void sumOdd(int [] vector) {
+
+    int sumOdd = 0;
+    String text = "";
+
+    for (int i = 0; i < vector.length; i++) {
+      if (i % 2 == 0) {
+        if ((vector[i] % 2) != 0) {
+          sumOdd = sumOdd + vector[i];
+          text += "+" + vector[i];
+        }
+      }
+    }
+    System.out.println("La suma de los números Impares, en posicion par es: " + sumOdd);
+  }
+
+  //Punto 1
+  public void inverse(int[] vector) {
+
+    System.out.println("El vector en sentido inverso es: ");
+    for (int i = (vector.length - 1); i >= 0; i--) {
+      System.out.print(vector[i] + "  ");
+    }
   }
 
   public void mostrarsumComponentes(int[] vector) {
@@ -95,35 +127,6 @@ public class Vector {
     }
     System.out.println("La cantidad de elementos iguales al ultimo son: " + contU);
     System.out.println("La cantidad de elementos diferentes al primero son: " + contP);
-  }
-
-  public void sumPairs(int [] vector) {
-
-    int sumPares = 0;
-    String text = "";
-    for (int i = 0; i < vector.length; i++) {
-      if ((vector[i] % 2) == 0) {
-        sumPares = sumPares + vector[i];
-        text += "+" + vector[i];
-      }
-    }
-    System.out.println("La suma de los números pares es: " + text + " = " + sumPares);
-  }
-
-  public void sumImpares(int [] vector) {
-
-    int sumImpares = 0;
-    String text = "";
-
-    for (int i = 0; i < vector.length; i++) {
-      if (i % 2 == 0) {
-        if ((vector[i] % 2) != 0) {
-          sumImpares = sumImpares + vector[i];
-          text += "+" + vector[i];
-        }
-      }
-    }
-    System.out.println("La suma de los números Impares, en posicion par es: " + text + " = " + sumImpares);
   }
 
   public void menoresprom(int [] vector, double prom) {

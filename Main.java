@@ -12,8 +12,8 @@ public class Main {
         vec.sum(vector);
         vec.promCalc(vec.sum(vector), vector);
         vec.iguales(vector);
-        vec.sumPairs(vector);
-        vec.sumImpares(vector);
+        vec.sumEven(vector);
+        vec.sumOdd(vector);
         vec.menoresprom(vector, prom);
         vec.mayorMenor(vector);
         vec.menorRepetido(vector);
